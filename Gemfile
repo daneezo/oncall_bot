@@ -10,6 +10,8 @@ gem "redis"
 
 # faraday — HTTP client for calling Claude API and Slack
 gem "faraday"
+# follow redirects automatically — needed for status pages that redirect
+gem "faraday-follow_redirects"
 
 # dotenv — loads .env file in development
 gem "dotenv-rails", groups: [:development, :test]
