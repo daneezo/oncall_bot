@@ -20,6 +20,11 @@ Bundler.require(*Rails.groups)
 
 module OncallBot
   class Application < Rails::Application
+    # use Sidekiq as the background job backend
+  config.active_job.queue_adapter = :sidekiq
+
+# autoload services folder
+  config.autoload_paths << Rails.root.join("app/services")  
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.1
 

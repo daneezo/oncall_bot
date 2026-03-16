@@ -2,6 +2,19 @@ source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.2"
+# sidekiq — background job processor
+gem "sidekiq"
+
+# redis — queue backend for sidekiq
+gem "redis"
+
+# faraday — HTTP client for calling Claude API and Slack
+gem "faraday"
+# follow redirects automatically — needed for status pages that redirect
+gem "faraday-follow_redirects"
+
+# dotenv — loads .env file in development
+gem "dotenv-rails", groups: [:development, :test]
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 2.1"
 # Use the Puma web server [https://github.com/puma/puma]
